@@ -27,10 +27,9 @@ public class UnidaysDiscountChallenge {
         Double delivery = 7.00;
 
         for (Map.Entry<Item, Integer> entry : basket.entrySet()) {
-            //total += entry.getValue() * entry.getKey().getPrice();
             Item item = entry.getKey();
             Integer qty = entry.getValue();
-            if (pricingRules.getDiscount(item) != null) {
+            if (pricingRules.hasDiscount(item)) {
                 total += pricingRules.getDiscountPrice(item, qty);
             } else {
                 total += qty * item.getPrice();

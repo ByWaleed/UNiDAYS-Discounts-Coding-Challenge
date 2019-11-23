@@ -15,8 +15,8 @@ public class PricingRules {
         rules.put(item, discount);
     }
 
-    public Discount getDiscount(Item item) {
-        return rules.get(item);
+    public Boolean hasDiscount(Item item) {
+        return rules.get(item) != null;
     }
 
     public Double getDiscountPrice(Item item, Integer qty) {
